@@ -18,6 +18,22 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Cerrar"
 
+[node name="Iniciar" type="Button" parent="Buttons_UI"]
+texture_filter = 1
+custom_minimum_size = Vector2(210, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = 108.0
+offset_right = 106.0
+offset_bottom = 139.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Iniciar"
+
 [node name="Decoration_UI" type="Node" parent="."]
 
 [node name="Desidia" type="TextureRect" parent="Decoration_UI"]
@@ -27,10 +43,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -246.0
-offset_top = -69.0
-offset_right = 246.0
-offset_bottom = 69.0
+offset_left = -248.0
+offset_top = -172.0
+offset_right = 244.0
+offset_bottom = -34.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_f7j37")
@@ -38,3 +54,4 @@ texture = ExtResource("2_f7j37")
 [node name="Music_UI" type="Node" parent="."]
 
 [connection signal="pressed" from="Buttons_UI/Cerrar" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Buttons_UI/Iniciar" to="." method="_on_iniciar_pressed"]

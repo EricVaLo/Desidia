@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://xaum5njdkhls"]
+
+[ext_resource type="Script" uid="uid://dxryf522jycmw" path="res://Scripts/World.gd" id="1_wwwho"]
+[ext_resource type="PackedScene" uid="uid://cshdjp3cbxdil" path="res://Scenes/Player/Player.tscn" id="2_gytdw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8p7bn"]
+size = Vector2(1152, 73)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_wwwho")
+
+[node name="Zonas" type="Node" parent="."]
+
+[node name="Base" type="Node2D" parent="Zonas"]
+
+[node name="TileMap" type="TileMap" parent="Zonas/Base"]
+format = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zonas/Base"]
+position = Vector2(576, 611.5)
+shape = SubResource("RectangleShape2D_8p7bn")
+
+[node name="Player" parent="Zonas/Base" instance=ExtResource("2_gytdw")]
+position = Vector2(448, 216)
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Inicio" type="Button" parent="Buttons"]
+offset_left = 64.0
+offset_top = 56.0
+offset_right = 122.0
+offset_bottom = 87.0
+text = "INICIO"
+
+[connection signal="pressed" from="Buttons/Inicio" to="." method="_on_button_pressed"]
